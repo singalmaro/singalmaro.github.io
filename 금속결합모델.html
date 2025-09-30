@@ -1298,13 +1298,14 @@
               오른쪽: 금속 결정의 단위세포 구조를 3D로 확인할 수 있습니다.<br>
               마우스로 드래그하여 단위세포를 회전시켜보세요.<br>
               상단의 '전기 전도성', '열 전도성' 버튼을 누르면<br>
-              금속의 물리적 성질을 시각적으로 체험할 수 있습니다.`;
+              금속의 물리적 성질을 시각적으로 체험할 수 있습니다.<br>
               unitCellInfo.innerHTML = `
                 <strong>${element.name} (${element.symbol})</strong><br>
                 격자 구조: ${element.description}<br>
                 단위세포 크기: ${element.unitCell.a} pm<br>
                 원자 반지름: ${element.radius} pm | 이온 반지름: ${element.ionRadius} pm
               `;
+              오류 발생 문의 : singalmaro@gmail.com`;
               break;
       }
       desc.innerHTML = html;
