@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유낙하 시뮬레이션</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>자유낙하 실험 시뮬레이션</h1>
+    <div class="info-box">
+        <h2>자유 낙하 실험이란?</h2>
+        <ul>
+            <li>물체를 초기 속도 없이 일정 높이에서 떨어뜨릴 때, 중력만을 받아 낙하하는 운동을 관찰하는 실험입니다.</li>
+            <li>이 실험을 통해 중력 가속도의 차이에 따라 낙하 시간과 속도가 어떻게 달라지는지 비교할 수 있습니다.</li>
+        </ul>
+        <b>실험 방법</b>
+        <ol>
+            <li>원하는 행성을 선택하고, 초기 높이를 입력합니다.</li>
+            <li>'시작' 버튼을 누르면 각 행성에서 물체가 자유 낙하하는 모습을 볼 수 있습니다.</li>
+            <li>그래프를 통해 시간에 따른 위치와 속도의 변화를 비교해보세요.</li>
+        </ol>
+        <b>주요 공식</b>
+        <ul>
+            <li>위치: h(t) = h₀ - (1/2)gt²</li>
+            <li>속도: v(t) = gt</li>
+            <li>(h₀: 초기 높이, g: 행성의 중력 가속도, t: 시간)</li>
+        </ul>
+        <hr>
+        <h2>분석 가이드</h2>
+        <ul>
+            <li>같은 높이에서 시작해도, 중력 가속도가 큰 행성일수록 더 빨리 바닥에 도달합니다.</li>
+            <li>그래프에서 곡선이 가파를수록(더 빠르게 떨어질수록) 중력이 큽니다.</li>
+            <li>속도 그래프는 시간에 따라 직선적으로 증가하며, 기울기가 클수록 중력이 큽니다.</li>
+            <li>달처럼 중력이 작은 행성에서는 낙하 시간이 길고, 속도 증가도 느립니다.</li>
+        </ul>
+        <div style="font-size:15px; color:#333; margin-top:8px;">
+            직접 실험을 통해 각 행성의 낙하 시간과 속도를 비교해보고,<br>
+            공식과 시뮬레이션 결과가 일치하는지 확인해보세요!
+        </div>
+    </div>
+    <div class="controls">
+        <label>초기 높이 (m): <input type="number" id="heightInput" value="10" min="1" max="1000"></label>
+        <div class="planet-select">
+            <span>행성 선택:</span>
+            <label><input type="checkbox" class="planetCheck" value="earth" checked> 지구</label>
+            <label><input type="checkbox" class="planetCheck" value="moon"> 달</label>
+            <label><input type="checkbox" class="planetCheck" value="mars"> 화성</label>
+            <label><input type="checkbox" class="planetCheck" value="jupiter"> 목성</label>
+            <label><input type="checkbox" class="planetCheck" value="mercury"> 수성</label>
+            <label><input type="checkbox" class="planetCheck" value="venus"> 금성</label>
+            <label><input type="checkbox" class="planetCheck" value="saturn"> 토성</label>
+        </div>
+        <button id="startBtn">시작</button>
+        <button id="pauseBtn">정지</button>
+        <button id="resetBtn">리셋</button>
+    </div>
+    <div class="sim-area" id="simArea">
+        <!-- 여러 행성의 애니메이션 캔버스가 동적으로 추가됨 -->
+    </div>
+    <div class="charts">
+        <div>
+            <h3>시간-위치 그래프</h3>
+            <canvas id="posChart"></canvas>
+        </div>
+        <div>
+            <h3>시간-속도 그래프</h3>
+            <canvas id="velChart"></canvas>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html> 
